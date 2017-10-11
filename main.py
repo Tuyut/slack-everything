@@ -9,6 +9,11 @@ def run():
     # Create main event loop
     event_loop = asyncio.get_event_loop()
 
+    # Define all backgroung tasks and start them
+    tasks = []
+    LOGGER.info('Adding %s periodic tasks', len(tasks))
+    event_loop.run_until_complete(asyncio.wait(tasks))
+
     # Launch main loop
     LOGGER.info('Launching loop')
     try:
