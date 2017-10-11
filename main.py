@@ -2,6 +2,7 @@
 import asyncio
 
 from config import LOGGER
+from plugins import get_periodic_tasks
 
 
 def run():
@@ -10,7 +11,7 @@ def run():
     event_loop = asyncio.get_event_loop()
 
     # Define all backgroung tasks and start them
-    tasks = []
+    tasks = get_periodic_tasks()
     LOGGER.info('Adding %s periodic tasks', len(tasks))
     event_loop.run_until_complete(asyncio.wait(tasks))
 

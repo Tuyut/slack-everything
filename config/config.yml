@@ -2,3 +2,4 @@ general:
   environment: test
   log_level:
     test: 10  # DEBUG
+  
